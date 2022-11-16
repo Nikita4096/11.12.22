@@ -12,17 +12,7 @@ void fill(int* arr, int n)
 void print(int* arr, int n)
 {
 	for (int i = 0; i < n; i++)
-		cout << *(arr + i) << "\t";
-}
-void rotate(int*& arr, int& n)
-{
-	int temp = *arr;
-	for (int i = 0; i < n - 1; i++)
-	{
-		*(arr + i) = *(arr + i + 1);
-		*(arr + n - 1) = temp;
-
-	}
+		cout << *(arr + i) << '\t';
 }
 
 int main()
@@ -42,7 +32,7 @@ A:
 	cout << "(For Ex.3) Enter M: ";
 	cin >> M;
 
-	if (a <= 10 || M <= 10)
+	if (a <= 10 /* || M <= 10*/)
 	{
 		cout << "Number of elements in the array can't be less than 10, please try again " << endl;
 		cout << endl;
@@ -91,8 +81,8 @@ A:
 	cout << endl;
 
 	int* arr2 = new int[M];
-	fill(arr2, a);
-	print(arr2, a);
+	fill(arr2, M);
+	print(arr2, M);
 
 	int even = 0;
 	int odd = 0;
@@ -138,8 +128,8 @@ A:
 	}
 
 	print(arr_even, even);
-	cout << endl;                                   //N3
-	print(arr_odd, odd);
+	cout << endl;                                  //N3
+	print(arr_odd, odd); 
 	delete[] arr;
 	delete[] arr1;
 	delete[] arr3;
